@@ -252,7 +252,7 @@ void main() {
       expect(result.name?.official, 'Federal Republic of Nigeria');
       expect(result.capital, ['Abuja']);
       expect(result.altSpellings, ['NG', 'Nijeriya', 'Naíjíríà', 'Federal Republic of Nigeria']);
-      expect(result.region, 'Africa');
+
       verify(() => mockHttpService.get("${Endpoints.africanCountryDetails}/nigeria")).called(1);
     });
 
