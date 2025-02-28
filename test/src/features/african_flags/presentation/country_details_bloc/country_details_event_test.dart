@@ -7,8 +7,8 @@ void main() {
       expect(const FetchCountryDetails(countryName: "Ghana"), const FetchCountryDetails(countryName: "Ghana"));
     });
 
-    test("props should be empty", () {
-      expect(const FetchCountryDetails(countryName: "Ghana").props, isEmpty);
+    test("props should not be empty", () {
+      expect(const FetchCountryDetails(countryName: "Ghana").props, isNotEmpty);
     });
 
     test('different event types should not be equal ', () {
