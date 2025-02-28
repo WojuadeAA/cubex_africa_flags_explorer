@@ -18,6 +18,5 @@ class PostalCode extends Equatable {
       };
 
   @override
-  // TODO: implement props
   List<Object?> get props => [format, regex];
 }
