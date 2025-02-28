@@ -248,8 +248,8 @@ void main() {
       final result = await service.getCountryDetails('nigeria');
       // Assert
       expect(result, isA<CountryDetails>());
-      expect(result.name.common, 'Nigeria');
-      expect(result.name.official, 'Federal Republic of Nigeria');
+      expect(result.name?.common, 'Nigeria');
+      expect(result.name?.official, 'Federal Republic of Nigeria');
       expect(result.capital, ['Abuja']);
       expect(result.altSpellings, ['NG', 'Nijeriya', 'Naíjíríà', 'Federal Republic of Nigeria']);
       expect(result.region, 'Africa');
