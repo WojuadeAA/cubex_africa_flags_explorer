@@ -105,6 +105,11 @@ class CountryDetails extends Equatable {
       capital: json['capital'] != null ? (json['capital'] as List<dynamic>).map((e) => e as String).toList() : null,
       altSpellings:
           json['altSpellings'] != null ? (json['altSpellings'] as List<dynamic>).map((e) => e as String).toList() : [],
+      region: json['region'] as String?,
+      subregion: json['subregion'] as String?,
+      languages: (json['languages'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(k, e as String),
+      ),
       translations: (json['translations'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(k, Translation.fromJson(e as Map<String, dynamic>)),
       ),
