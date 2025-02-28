@@ -2,10 +2,12 @@
 import 'package:cubex_africa_flags_explorer/src/core/runner/failure.dart';
 import 'package:cubex_africa_flags_explorer/src/core/runner/service_runner.dart';
 import 'package:cubex_africa_flags_explorer/src/features/african_flags/data/datasource/remote_service.dart';
+import 'package:cubex_africa_flags_explorer/src/features/african_flags/data/models/country_details_model.dart';
 import 'package:cubex_africa_flags_explorer/src/features/african_flags/data/models/country_model.dart';
 
 abstract class AfricanFlagsRepository {
   FutureEither<List<Country>> getCountries();
+  FutureEither<CountryDetails> getCountryDetailsByName(String countryName);
 }
 
 class AfricanFlagsRepositoryImpl implements AfricanFlagsRepository {
@@ -15,13 +17,17 @@ class AfricanFlagsRepositoryImpl implements AfricanFlagsRepository {
 
   @override
   FutureEither<List<Country>> getCountries() {
-    try {
-      return ServiceRunner<Failure, List<Country>>().run(
-        name: name,
-        call: remoteService.getCountries(),
-      );
-    } catch (e) {
-      return FutureEither.error(const CommonFailure('An error occurred', ""));
-    }
+    return ServiceRunner<Failure, List<Country>>().run(
+      name: name,
+      call: remoteService.getCountries(),
+    );
+  }
+
+  @override
+  FutureEither<CountryDetails> getCountryDetailsByName(String countryName) {
+    return ServiceRunner<Failure, CountryDetails>().run(
+      name: name,
+      call: remoteService.getCountryDetails(countryName.toLowerCase()),
+    );
   }
 }
