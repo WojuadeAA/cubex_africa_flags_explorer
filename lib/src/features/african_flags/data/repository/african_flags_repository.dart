@@ -27,7 +27,7 @@ class AfricanFlagsRepositoryImpl implements AfricanFlagsRepository {
   FutureEither<CountryDetails> getCountryDetailsByName(String countryName) {
     return ServiceRunner<Failure, CountryDetails>().run(
       name: name,
-      call: remoteService.getCountryDetails(countryName.toLowerCase()),
+      call: remoteService.getCountryDetails(countryName),
     );
   }
 }
