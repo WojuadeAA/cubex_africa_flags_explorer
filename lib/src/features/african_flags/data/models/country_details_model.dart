@@ -12,99 +12,99 @@ import 'package:cubex_africa_flags_explorer/src/features/african_flags/data/mode
 import 'package:equatable/equatable.dart';
 
 class CountryDetails extends Equatable {
-  final CountryNameModel name;
-  final List<String> tld;
-  final String cca2;
-  final String ccn3;
-  final String cca3;
-  final String cioc;
-  final bool independent;
-  final String status;
-  final bool unMember;
-  final Map<String, Currency> currencies;
-  final Idd idd;
-  final List<String> capital;
-  final List<String> altSpellings;
-  final String region;
-  final String subregion;
-  final Map<String, String> languages;
-  final Map<String, Translation> translations;
-  final List<double> latlng;
-  final bool landlocked;
-  final List<String> borders;
-  final double area;
-  final Map<String, Demonym> demonyms;
-  final String flag;
-  final Maps maps;
-  final int population;
-  final Map<String, double> gini;
-  final String fifa;
-  final Car car;
-  final List<String> timezones;
-  final List<String> continents;
-  final CountryFlags flags;
-  final CoatOfArms coatOfArms;
-  final String startOfWeek;
-  final CapitalInfo capitalInfo;
-  final PostalCode postalCode;
+  final CountryNameModel? name;
+  final List<String>? tld;
+  final String? cca2;
+  final String? ccn3;
+  final String? cca3;
+  final String? cioc;
+  final bool? independent;
+  final String? status;
+  final bool? unMember;
+  final Map<String, Currency>? currencies;
+  final Idd? idd;
+  final List<String>? capital;
+  final List<String>? altSpellings;
+  final String? region;
+  final String? subregion;
+  final Map<String, String>? languages;
+  final Map<String, Translation>? translations;
+  final List<double>? latlng;
+  final bool? landlocked;
+  final List<String>? borders;
+  final double? area;
+  final Map<String, Demonym>? demonyms;
+  final String? flag;
+  final Maps? maps;
+  final int? population;
+  final Map<String, double>? gini;
+  final String? fifa;
+  final Car? car;
+  final List<String>? timezones;
+  final List<String>? continents;
+  final CountryFlags? flags;
+  final CoatOfArms? coatOfArms;
+  final String? startOfWeek;
+  final CapitalInfo? capitalInfo;
+  final PostalCode? postalCode;
 
   const CountryDetails({
-    required this.name,
-    required this.tld,
-    required this.cca2,
-    required this.ccn3,
-    required this.cca3,
-    required this.cioc,
-    required this.independent,
-    required this.status,
-    required this.unMember,
-    required this.currencies,
-    required this.idd,
-    required this.capital,
-    required this.altSpellings,
-    required this.region,
-    required this.subregion,
-    required this.languages,
-    required this.translations,
-    required this.latlng,
-    required this.landlocked,
-    required this.borders,
-    required this.area,
-    required this.demonyms,
-    required this.flag,
-    required this.maps,
-    required this.population,
-    required this.gini,
-    required this.fifa,
-    required this.car,
-    required this.timezones,
-    required this.continents,
-    required this.flags,
-    required this.coatOfArms,
-    required this.startOfWeek,
-    required this.capitalInfo,
-    required this.postalCode,
+    this.name,
+    this.tld,
+    this.cca2,
+    this.ccn3,
+    this.cca3,
+    this.cioc,
+    this.independent,
+    this.status,
+    this.unMember,
+    this.currencies,
+    this.idd,
+    this.capital,
+    this.altSpellings,
+    this.region,
+    this.subregion,
+    this.languages,
+    this.translations,
+    this.latlng,
+    this.landlocked,
+    this.borders,
+    this.area,
+    this.demonyms,
+    this.flag,
+    this.maps,
+    this.population,
+    this.gini,
+    this.fifa,
+    this.car,
+    this.timezones,
+    this.continents,
+    this.flags,
+    this.coatOfArms,
+    this.startOfWeek,
+    this.capitalInfo,
+    this.postalCode,
   });
 
   factory CountryDetails.fromJson(Map<String, dynamic> json) {
     return CountryDetails(
-      name: CountryNameModel.fromJson(json['name'] as Map<String, dynamic>),
-      tld: (json['tld'] as List<dynamic>).map((e) => e as String).toList(),
-      cca2: json['cca2'] as String,
-      ccn3: json['ccn3'] as String,
-      cca3: json['cca3'] as String,
-      cioc: json['cioc'] as String,
-      independent: json['independent'] as bool,
-      status: json['status'] as String,
-      unMember: json['unMember'] as bool,
-      currencies: (json['currencies'] as Map<String, dynamic>)
-          .map((k, e) => MapEntry(k, Currency.fromJson(e as Map<String, dynamic>))),
-      idd: Idd.fromJson(json['idd'] as Map<String, dynamic>),
-      capital: (json['capital'] as List<dynamic>).map((e) => e as String).toList(),
-      altSpellings: (json['altSpellings'] as List<dynamic>).map((e) => e as String).toList(),
-      region: json['region'] as String,
-      subregion: json['subregion'] as String,
-      languages: Map<String, String>.from(json['languages'] as Map),
+      name: json['name'] != null ? CountryNameModel.fromJson(json['name'] as Map<String, dynamic>) : null,
+      tld: json['tld'] != null ? (json['tld'] as List<dynamic>).map((e) => e as String).toList() : null,
+      cca2: json['cca2'] as String?,
+      ccn3: json['ccn3'] as String?,
+      cca3: json['cca3'] as String?,
+      cioc: json['cioc'] as String?,
+      independent: json['independent'] as bool?,
+      status: json['status'] as String?,
+      unMember: json['unMember'] as bool?,
+      currencies: json['currencies'] != null
+          ? (json['currencies'] as Map<String, dynamic>)
+              .map((k, e) => MapEntry(k, Currency.fromJson(e as Map<String, dynamic>)))
+          : null,
+      idd: json['idd'] != null ? Idd.fromJson(json['idd'] as Map<String, dynamic>) : null,
+      capital: json['capital'] != null ? (json['capital'] as List<dynamic>).map((e) => e as String).toList() : null,
+      altSpellings:
+          json['altSpellings'] != null ? (json['altSpellings'] as List<dynamic>).map((e) => e as String).toList() : [],
       translations: (json['translations'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(k, Translation.fromJson(e as Map<String, dynamic>)),
       ),
@@ -125,16 +125,17 @@ class CountryDetails extends Equatable {
       car: Car.fromJson(json['car'] as Map<String, dynamic>),
       timezones: (json['timezones'] as List<dynamic>).map((e) => e as String).toList(),
       continents: (json['continents'] as List<dynamic>).map((e) => e as String).toList(),
-      flags: CountryFlags.fromJson(json['flags'] as Map<String, dynamic>),
-      coatOfArms: CoatOfArms.fromJson(json['coatOfArms'] as Map<String, dynamic>),
+      flags: json['flags'] == null ? null : CountryFlags.fromJson(json['flags'] as Map<String, dynamic>),
+      coatOfArms: json['coatOfArms'] == null ? null : CoatOfArms.fromJson(json['coatOfArms'] as Map<String, dynamic>),
       startOfWeek: json['startOfWeek'] as String,
-      capitalInfo: CapitalInfo.fromJson(json['capitalInfo'] as Map<String, dynamic>),
-      postalCode: PostalCode.fromJson(json['postalCode'] as Map<String, dynamic>),
+      capitalInfo:
+          json['capitalInfo'] == null ? null : CapitalInfo.fromJson(json['capitalInfo'] as Map<String, dynamic>),
+      postalCode: json['postalCode'] == null ? null : PostalCode.fromJson(json['postalCode'] as Map<String, dynamic>),
     );
   }
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'name': name.toJson(),
+      'name': name?.toJson(),
       'tld': tld,
       'cca2': cca2,
       'ccn3': ccn3,
@@ -143,32 +144,32 @@ class CountryDetails extends Equatable {
       'independent': independent,
       'status': status,
       'unMember': unMember,
-      'currencies': currencies.map((k, e) => MapEntry(k, e.toJson())),
-      'idd': idd.toJson(),
+      'currencies': currencies?.map((k, e) => MapEntry(k, e.toJson())),
+      'idd': idd?.toJson(),
       'capital': capital,
       'altSpellings': altSpellings,
       'region': region,
       'subregion': subregion,
       'languages': languages,
-      'translations': translations.map((k, e) => MapEntry(k, e.toJson())),
+      'translations': translations?.map((k, e) => MapEntry(k, e.toJson())),
       'latlng': latlng,
       'landlocked': landlocked,
       'borders': borders,
       'area': area,
-      'demonyms': demonyms.map((k, e) => MapEntry(k, e.toJson())),
+      'demonyms': demonyms?.map((k, e) => MapEntry(k, e.toJson())),
       'flag': flag,
-      'maps': maps.toJson(),
+      'maps': maps?.toJson(),
       'population': population,
       'gini': gini,
       'fifa': fifa,
-      'car': car.toJson(),
+      'car': car?.toJson(),
       'timezones': timezones,
       'continents': continents,
-      'flags': flags.toJson(),
-      'coatOfArms': coatOfArms.toJson(),
+      'flags': flags?.toJson(),
+      'coatOfArms': coatOfArms?.toJson(),
       'startOfWeek': startOfWeek,
-      'capitalInfo': capitalInfo.toJson(),
-      'postalCode': postalCode.toJson(),
+      'capitalInfo': capitalInfo?.toJson(),
+      'postalCode': postalCode?.toJson(),
     };
   }
 
