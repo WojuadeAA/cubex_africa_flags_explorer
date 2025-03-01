@@ -47,8 +47,8 @@ class IHttpService implements HttpService {
     dio = Dio(
       BaseOptions(
         baseUrl: baseUrl,
-        connectTimeout: const Duration(milliseconds: 300000),
-        receiveTimeout: receiveTimeout ?? const Duration(milliseconds: 250000),
+        connectTimeout: const Duration(seconds: 6),
+        receiveTimeout: receiveTimeout ?? const Duration(seconds: 6),
       ),
     );
     _interceptorsInit();
