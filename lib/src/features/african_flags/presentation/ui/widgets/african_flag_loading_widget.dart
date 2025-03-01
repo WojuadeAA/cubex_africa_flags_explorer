@@ -22,6 +22,7 @@ class LoadingWidget extends StatelessWidget {
           Text(
             message,
             style: const TextStyle(fontSize: 16, color: Colors.grey),
+            textAlign: TextAlign.center,
           ),
         ],
       ),
