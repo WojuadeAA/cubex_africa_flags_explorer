@@ -24,9 +24,6 @@ To get started with the Cubex Africa Flags Explorer, follow these steps:
     ```bash
     flutter pub get
     ```
-    ## Built With
-
-    Cubex Africa Flags Explorer is built using the Flutter framework and the BLoC (Business Logic Component) pattern. This project showcases my approach to building a Flutter application with BLoC, ensuring a scalable and maintainable codebase.
 
     ## Running Tests
 
@@ -41,4 +38,8 @@ To get started with the Cubex Africa Flags Explorer, follow these steps:
     flutter  run
     ```
     This will start the application on the default device or emulator.
+    ## Built With
 
+    Cubex Africa Flags Explorer is built using the Flutter framework and BLOC as the state management library. This project showcases my approach to building a Flutter application with BLoC, ensuring a scalable and maintainable codebase.
+
+    
